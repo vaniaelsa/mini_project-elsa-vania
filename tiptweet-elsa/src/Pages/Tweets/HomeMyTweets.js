@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./HomeMyTweets.css";
 import { Link } from "react-router-dom";
 import ListTweets from "../../Components/Tweets/ListTweets";
+import { Footer } from "../../Components";
 
 // Subscription
 import { useQuery, useSubscription, useLazyQuery } from "@apollo/client";
@@ -41,13 +42,13 @@ const HomeMyTweets = () => {
       <div className="text-center my-5">
         <input
           type="search"
-          placeholder="Search Tweets"
+          placeholder="Search By Description"
           name="description"
           value={inputVal.description}
           onChange={onChange}
         />
         <button className="btn btn-primary" onClick={onPublish}>
-          Cari
+          Search{" "}
         </button>
       </div>
       <br />
@@ -61,6 +62,8 @@ const HomeMyTweets = () => {
       <div>
         <ListTweets newInput={data ? data.project_tweet : ""} />
       </div>
+
+      <Footer />
     </>
   );
 };

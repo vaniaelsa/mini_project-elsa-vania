@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-// let people = require("../assets/img/tiptweet.jpg");
+import { Footer } from "../../Components";
 const people = require("../../assets/img/tiptweet.jpg");
 
 function Home() {
@@ -9,17 +9,18 @@ function Home() {
       <div className="container">
         <div className="row">
           <h1 className=" h1-text text-center mt-3">TIP TWEET</h1>
-          <p className="text-center fw-bold">
-            This is the best place for you to save important Link From Twitter !
-          </p>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+
       <div className="container">
         <div className="row justify-content-center">
           <div className=" col-md-6 col-sm-6 ps-5">
             <div className="card-body text-center">
               <div className="mb-3">
-                <img src={people} alt="" height="300px" />
+                <img src={people} alt="people" height="300px" />
               </div>
             </div>
           </div>
@@ -39,17 +40,7 @@ function Home() {
         </div>
       </div>
 
-      <footer>
-        <div className="text-center p-3 position">
-          <div className="row">
-            <div>
-              &copy; Copyright TipTweet. All rights reserved.
-              <br />
-              Mini Project Elsa Vania
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }

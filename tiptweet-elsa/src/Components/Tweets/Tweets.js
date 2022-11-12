@@ -15,9 +15,8 @@ const Tweets = ({ data }) => {
       },
     });
   };
-  
-  // console.log(data.id)
 
+  // console.log(data.id)
 
   return (
     <>
@@ -27,12 +26,12 @@ const Tweets = ({ data }) => {
           <td>
             <div className="card">
               <div className="row">
-                <div className="col-md-3">
+                <div className="col-md-2">
                   <p>Link : </p>
                   <p>Descriptions : </p>
                   <p>Category : </p>
                 </div>
-                <div className="col-md-9">
+                <div className="col-md-10">
                   <p>
                     <a target="_blank" rel="noreferrer" href={data.link}>
                       {data.link}
@@ -46,9 +45,8 @@ const Tweets = ({ data }) => {
           </td>
           <td>
             <div className="col-md-8 p-4">
-              <EditMyTweets data={data.id}/>
+              <EditMyTweets data={data.id} />
             </div>
-            {/* className="col-md-4" */}
             <div className="col-md-8 p-4">
               <button
                 onClick={() => removeTweet(data.id)}

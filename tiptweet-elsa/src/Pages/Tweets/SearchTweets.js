@@ -7,25 +7,27 @@ export const SearchTweets = () => {
   const [search, { data }] = useLazyQuery(SEARCH_TWT);
 
   return (
-    <div className="text-center">
-      <input
-        className="form-control"
-        type="search"
-        name="search"
-        placeholder="Search Tweets"
-        value={inputVal}
-        onChange={(e) => setInputVal(e.target.value)}
-      ></input>
+    <>
+      <div className="text-center">
+        <input
+          className="form-control"
+          type="search"
+          name="search"
+          placeholder="Search By Description"
+          value={inputVal}
+          onChange={(e) => setInputVal(e.target.value)}
+        ></input>
 
-      <button
-        onClick={() =>
-          search({
-            variables: { filter: setInputVal },
-          })
-        }
-      >
-        Search
-      </button>
-    </div>
+        <button
+          onClick={() =>
+            search({
+              variables: { filter: setInputVal },
+            })
+          }
+        >
+          Search
+        </button>
+      </div>
+    </>
   );
 };

@@ -3,10 +3,9 @@ import Tweets from "./Tweets";
 // Subscription
 import { useQuery } from "@apollo/client";
 import { GET_TWEET } from "../../GraphQL/mygraphql";
-import { useState } from "react";
+// import { useState } from "react";
 
 const ListTweets = (newInput) => {
-
   const { loading, error, data } = useQuery(GET_TWEET);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
@@ -36,18 +35,13 @@ const ListTweets = (newInput) => {
               <th bgcolor="white"> Actions</th>
             </tr>
           </thead>
-          {
-          newInputValue.newInput ?
-
-          newInputValue.newInput.map((item) => (
-            <Tweets key={item.id} data={item} />
-          ))
-          : 
-          data.project_tweet.map((item) => (
-            <Tweets key={item.id} data={item} />
-          ))
-          
-          }
+          {newInputValue.newInput
+            ? newInputValue.newInput.map((item) => (
+                <Tweets key={item.id} data={item} />
+              ))
+            : data.project_tweet.map((item) => (
+                <Tweets key={item.id} data={item} />
+              ))}
         </table>
       </>
     );
